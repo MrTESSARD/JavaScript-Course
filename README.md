@@ -9,8 +9,8 @@ Ce cours couvrira les bases de JavaScript et tout ce qui est nécessaire (selon 
 Le cours suivra le schéma suivant :
 
 1. Introduction à JavaScript
-2. JavaScript et la manipulation du DOM
-3. JavaScript : Les bases de la programmation
+2. JavaScript : Les bases de la programmation
+3. JavaScript et la manipulation du DOM
 4. ES6 ou comment standardiser JavaScript
 
 >_Ce cours est encore en cours de rédaction et le sera pendant très longtemps. C'est pourquoi il sera mis à jour régulièrement_
