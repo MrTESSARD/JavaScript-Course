@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>JavaScript embarqué ou pas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>JavaScript variables</title>
 </head>
 <body>
-    <script>
-        console.log("Hello ...");
-    
-        console.log("It's me ...");
-    </script>
-    <script src="index.js"></script>
+    <h1 class="code-line" data-line-start=0 data-line-end=1><a id="Les_variables__var___let__et__const__0"></a>Les variables <em>var</em>, <em>let</em> et <em>const</em></h1>
+    <ul>
+    <li class="has-line-data" data-line-start="2" data-line-end="3">Var : sert à définir des variables globales. Aujourd’hui c’est plutôt maladroit pour plusieurs raisons</li>
+    <li class="has-line-data" data-line-start="3" data-line-end="4">Let : Sert à définir des variables qui ont un résoluteur de portée niveau block (ou block scope). Ces variables sont modifiables.</li>
+    <li class="has-line-data" data-line-start="4" data-line-end="6">Const : Sert à définir des variables constantes qui ont aussi un résoluteur de portée niveau block. Ces variables sont constantes donc non modifiables.</li>
+    </ul>
+    <blockquote>
+    <p class="has-line-data" data-line-start="6" data-line-end="7">Pour choisir il suffit de se demander si je voudrais que la valeur change. Si je crée une variable qui pointe vers une &lt;div&gt; par exemple, elle ne changera pas.</p>
+    </blockquote>
+    <h1 class="code-line" data-line-start=8 data-line-end=9><a id="Les__types_de_donnes__ou__data_types__8"></a>Les <em>types de données</em> ou <em>data types</em></h1>
+    <script src="main.js"></script>
 </body>
 </html>
