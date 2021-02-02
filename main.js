@@ -12,6 +12,17 @@ const uneConst = "Constante";
 
 console.log(uneConst);
 
+let number = 0;//Déclaration & affectation
+number++;//Ajoute 1 à la variable number
+++number;//Ajoute 1 à la variable number
+number = number + 5;//Ajoute 5 à la variable number
+number += 5;//Ajoute 5 à la variable number
+number *= 5;//Multiplie par 5 la variable number
+number /= 5;//Divise par 5 la variable number
+
+
+console.log(number);
+
 // Autres façons de log dans la console
 console.error('Une erreur');
 console.warn('Un avertissement');
