@@ -23,3 +23,22 @@ let num = 255; // Stringify un chiffre en fonction d'une base de bits
 
 //console.log(125.25.toString(16)); // On utilise 2 points pour chaîner un nombre et une méthode
 
+// Opérateurs et Méthodes Math
+console.log("La réponse est " + 42); // + crée une concaténation
+console.log(42 + ' est la réponse'); // dans l'autre sens aussi
+
+console.log("25"-2);// Mais les autres opérateurs font le calcul
+
+// Récupérer un number depuis une string
+let numString = parseInt('18');
+console.log(numString)
+
+let binary = parseInt('101', 2);//Encodage en binaire
+console.log(binary)
+
+let numNotString = '11' + '11';// Concaténation
+console.log(numNotString);
+
+let numIsString = +'11' + +'11'; // Conversion en number avec les +
+console.log(numIsString);
+
