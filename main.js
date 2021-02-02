@@ -1,5 +1,5 @@
+"use strict";
 // Concatenate & recent changes
-"use script"
 
 const nom = "Gromat";
 const prenom = "Axel";
@@ -16,3 +16,4 @@ console.log(heureDeTravailCumule);
 
 // Recent Changes
 console.log(`Je m'appelle ${nomComplet} et j'ai travaillé ${heureDeTravail} heures aujourd'hui`)
+
