@@ -35,6 +35,7 @@ for(let char of "Hello"){
 */
 
 console.log(maVar1.substring(0,5)); // Permet de récupérer une partie d'une chaîne de caractères.
+console.log(maVar1.substring(0,5).toUpperCase().toLowerCase()); //
 console.log(listeDeCourses.indexOf('Lait'));// Permet de récupérer l'index d'un "mot" dans une chaîne de caractères
 console.log(maVar1.substring(0,maVar1.indexOf(' '))); // Permet de récupérer une partie d'une chaîne de caractères à partir de l'index d'un mot/caractère dans une chaîne de caractères
 
