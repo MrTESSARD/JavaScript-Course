@@ -1,4 +1,5 @@
 // Concatenate & recent changes
+"use script"
 
 const nom = "Gromat";
 const prenom = "Axel";
