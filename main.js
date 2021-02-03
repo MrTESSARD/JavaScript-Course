@@ -33,3 +33,20 @@ console.log(fruits.length) // Changer la longueur de l'array (supprimera le rest
 
 //let isIt = Array.isArray(fruits); Vérifier si un élément est un array, renvoie true ou false
 console.table(fruits);
+
+
+// ARRAYS - avancés
+
+let matrice = [
+    [1,true,"non"],
+    [4,5,6],
+    [7,8,9],
+];
+
+console.log(matrice[2]);
+//alert(matrice); //Stringify mon array en l'appellant dans un lieu où une string est nécessaire
+//console.log(matrice + 1);
+
+console.log([0] == [0]);// On ne vérifie pas l'équivalence des arrays avec une comparaison numérique car il va comparer les propriétés en bits de l'array
+
+console.log(0==[]);//Va comparer la valeur mathématique de l'array et donc retourner 0
