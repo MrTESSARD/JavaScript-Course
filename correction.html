@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Correction exercice strings</title>
+</head>
+<body>
+    <h1>Correction des exercices sur les strings</h1>
+    <h2>Exercice 1 :</h2>
+    <ul>
+        <li>Une citation (ou plutôt sa moitié) est donnée dans le code JS, déclarez une variable finDeCitation qui contiendra le reste de cette citation</li>
+        <li class="correct">Pour ce faire nous ferons let finDeCitation="programmer ne peut être qu'en rajouter"; changer par la même occasion les guillemets (ou échappez les) dans la première variable</li>
+        <li>Créez une variable qui contiendra la citation au complet nommée citationFinale</li>
+        <li class="correct">let citationFinale = `${debutDeCitation} ${finDeCitation}`;</li>
+        <li>Corrigez le code de façon à ce qu'il s'affiche correctement</li>
+        <li class="correct">Déja corrigé plus tôt en changeant les guillemets</li>
+    </ul>
+    <h2>Exercice 2 :</h2>
+    <ul>
+        <li>Récupérez la longueur de la citation et intégrez la à une variable qui s'appelle quoteLength</li> 
+        <li class="correct">let quoteLength = quote.length;</li>
+        <li>Trouvez l'index de la substring dans la quote et intégrez la à une variable qui s'appelle index.</li>
+        <li class="correct">let index = quote.indexOf(substring);</li>
+        <li>Utilisez une combinaison des propriétés/fonctions liées aux strings que vous connaissez pour raccourcir la citation à "I do not like green eggs and ham.", et stockez là dans une variable qui s'appellera revisedQuote.</li>
+        <li><strong>2 méthodes existent</strong>
+            <ul>
+                <li><em>La méthode split</em></li>
+                <li class="correct">En n'utilisant qu'une seule méthode, vous pouvez diviser la citation qui doit être coupée au même endroit que le premier point "."</li>
+                <li class="correct">On peut donc faire une nouvelle variable let splitQuote = quote.split(". ");</li>
+                <li class="correct">Puis trouver l'index de la première partie de la phrase donc <span>let revisedQuote = splitQuote[0];</span></li>
+                <li><em>La méthode "algo"</em></li>
+                <li class="correct">En utilisant les paramètres de la chaîne que nous avons nous pouvons soustraire une partie de la citation à l'aide de la méthode substring()</li>
+                <li class="correct">La citation se situe entre le 1er et le 34e caractère. En index cela correspond à 0 jusqu'a 33 mais nous pouvons trouver ce 33 avec nos propriétés</li>
+                <li class="correct">Nous avons obtenu l'index de "green eggs and ham" dans la variable index. En l'occurence sa valeur est de 14.</li>
+                <li class="correct">Lorsque l'on fait un substring.length nous obtenons 18 car le point n'est pas compris dans substring</li>
+                <li class="correct">Par conséquent pour soustraire la phrase que nous souhaitons, il faut donc ajouter l'index, la taille de substring et 1 pour le point manquant</li>
+                <li class="correct"><span> let revisedQuote = quote.substring(0,index+substring+1);</span></li>
+            </ul>
+        </li> 
+    </ul>
+    <h2><em>Exercice 3 (dans alt_js.js):</em></h2>
+    <ul>
+        <li>Utiliser une méthode JS pour changer la citation afin qu'elle soit entièrement en minuscule, et la stocker dans une variable nommée citationCorrigee</li>
+        <li>Utiliser la méthode replace() pour créer une nouvelle citation qui contiendra quelque chose que vous n'aimez pas, et la stocker dans la variable maCitation</li>
+        <li>Afficher les deux citations dans la console</li>
+    </ul>
+    <script src="main.js"></script>
+    <script src="alt_js.js"></script>
+</body>
+</html>
