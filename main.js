@@ -1,54 +1,35 @@
-// let & const
+// Arrays
 
-let maVariable;
+// Ancienne méthode de création d'un array
 
-console.log(maVariable);
+var array = new Array(1, 2, 3, 4, 5, 6, true, 'tout');
 
-maVariable = 1;
+// Nouvelle méthode
+const fruits = [
+    'pommes',
+    'poires',
+    'fraises',
+    'framboises',
+];
 
-console.log(maVariable);
+fruits.push('Melon'); //Ajout d'un élément dans l'array avec la méthode push
 
-const uneConst = "Constante";
+fruits[4] = "Citron"; //Ajout/Remplacement d'un élément dans l'array avec son index
 
-console.log(uneConst);
+fruits.unshift('Abricots'); //Ajout d'un élément dans l'array à la première place
 
-let number = 0;//Déclaration & affectation
-number++;//Ajoute 1 à la variable number
-++number;//Ajoute 1 à la variable number
-number = number + 5;//Ajoute 5 à la variable number
-number += 5;//Ajoute 5 à la variable number
-number *= 5;//Multiplie par 5 la variable number
-number /= 5;//Divise par 5 la variable number
+let suppFin = fruits.pop(); //Suppression de l'élément à la fin de l'array
+let suppDebut = fruits.shift(); //Suppression de l'élément au début de l'array
+let suppIndex = fruits.splice(0,1); // Suppression de 1 élément à la position 0de l'array
 
+//console.log(suppIndex);
 
-console.log(number);
+let copyFruits = fruits.slice();
 
-// Autres façons de log dans la console
-console.error('Une erreur');
-console.warn('Un avertissement');
+console.log(copyFruits);
+// Propriétés de l'array
 
-const age = 20; // Datatype number
-const temperature = 24.6; // Datatype number
+console.log(fruits.length) // Changer la longueur de l'array (supprimera le reste si il y en a plus que la longueur demandée)
 
-console.log(typeof age);
-
-const name = "Jean-Michel" // Datatype string
-const vitesse = "200" // Datatype string
-
-console.log(typeof vitesse);
-
-const votreNiveauEnJs = null; //Datatype Null, mais va être affiché en tant qu'objet
-
-console.log(typeof votreNiveauEnJs);
-
-let indefini; // Datatype undefined
-
-console.log(typeof indefini);
-
-let unPlusGrandQueZero = true; //Datatype Boolean
-
-console.log(typeof unPlusGrandQueZero);
-
-//Il existe aussi des données de type Symbol qui servent à stocker des infos sensibles et inchangeables.
-
-//BigInt est un type de données qui est proposé pour ES2020.
+//let isIt = Array.isArray(fruits); Vérifier si un élément est un array, renvoie true ou false
+console.table(fruits);
