@@ -10,8 +10,9 @@ Le cours suivra le schéma suivant :
 
 1. Introduction à JavaScript
 2. JavaScript : Les bases de la programmation
-3. JavaScript et la manipulation du DOM
-4. ES6 ou comment standardiser JavaScript
+3. ES6 ou comment standardiser JavaScript
+4. JavaScript et la manipulation du DOM
+
 
 >_Ce cours est encore en cours de rédaction et le sera pendant très longtemps. C'est pourquoi il sera mis à jour régulièrement_
 >
