@@ -1,12 +1,24 @@
-// VARIABLES EXERCICE
+// STRING EXERCICE 1
 
-// EDIT HERE
+// Add your code here
 
-const myName = 'Default';
-myName = 'Jean-Jacques';
+let debutDeCitation = 'Si debugger, c'est supprimer des bugs, alors programmer ne peut être que les ajouter';
 
-let myAge = '42';
 
 // Don't edit the code below here!
 
-console.log(`In 20 years, I will be ${myAge + 20}`);
+console.log(citationFinale);
+
+
+// STRING EXERCICE 2
+
+let quote = 'I do not like green eggs and ham. I do not like them, Sam-I-Am.';
+let substring = 'green eggs and ham';
+
+// Add your code here
+
+// Don't edit the code below here!
+
+console.log(`La citation possède ${ quoteLength } caractères.`);
+
+console.log(revisedQuote);
