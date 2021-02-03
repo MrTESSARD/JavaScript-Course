@@ -2,7 +2,7 @@
 
 // Add your code here
 
-let debutDeCitation = 'Si debugger, c'est supprimer des bugs, alors programmer ne peut être que les ajouter';
+let debutDeCitation = 'Si debugger, c'est supprimer des bugs, alors ';
 
 
 // Don't edit the code below here!
