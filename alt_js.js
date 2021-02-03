@@ -1,6 +1,6 @@
 // EXERCICE 3 : STRINGS
 
-let quote = 'I dO nOT lIke gREen eGgS anD HAM';
+let quote2 = 'I dO nOT lIke gREen eGgS anD HAM';
 
 //  --- VOTRE CODE ICI ---
 
