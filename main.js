@@ -1,104 +1,69 @@
-// Les conditions en JS
-"use strict";
-// CONDITIONS IF, ELSE IF & ELSE
+// FUNCTIONS
+/* Les fonctions et leur utilité reposent sur deux principes
+    DRY & WET :
+    Don't Repeat Yourself : Si dans mon édition de code, je me retrouve à coder plusieurs fois la même chose. Il y a de fortes chances qu'une function suffise pour accélerer mon travail.
+    Write Everything Twice, but not thrice : Vous pouvez écrire tout 2 fois, mais pas 3. C'est le principe de vous imposer des limites dans la répétition.
+*/
 
-let annee = 2021;
-//let annee = prompt('En quelle année est-on ?',2021); // On utilise prompt() pour demander à l'utilisateur d'entrer une donnée à l'entrée sur le site.
-if(annee < 2021){
-    console.log("T'es dans le passé gros");
-    //L'instruction if permet de demander de vérifier une condition et d'exécuter le code entre crochet si la condition est vraie
-}else if(annee == 2021){
-    console.log("T'as raison mek");
-    //L'instruction else if permet de vérifier des conditions supplémentaires si le premier if n'est pas vérifié
-}else{
-    console.log("T'es dans le turfu");
-    //L'instruction else permet de cibler tous les cas qui ne rentrent ni dans les if, ni dans les éventuels else if. Le cas général
-}
-// LES VALEURS TRUTHY (OU FALSY)
+// Une fonction possède généralement un nom, des arguments (ou pas), et un body.
 
-let x = true;// "hello",1 sont des primitives avec des valeurs non nulles donc considérées comme TRUTHY
+// Le nom de la fonction sert à la rappeler par la suite
 
-let y = [];// {} sont des objets donc ils ne sont jamais 'vraiment" vides, et par conséquent considérés comme truthy;
+// Les arguments servent à renseigner les valeurs/le type de valeurs qui sont attendus dans la fonction
 
-let z = 0;//"",false,undefined,null sont des primitives sans valeurs ou ayant une valeur nulle donc falsy.
+// Le body renseigne sur les instructions à exécuter un efois la fonction appelée
 
-console.log(!! z);
-// L'opérateur !! force la vérification d'une valeur true ou false sur l'argument suivant. C'est pourquoi il existe des valeurs truthy et falsy.
+// Forme déclarative et expressions : Les déclarations possèdent du hoisting que les expressions n'ont pas. On utilise généralement les expressions pour des fonctions anonymes à executer immédiatement (IIFE)
 
-
-/* Conditions ternaires : "? et :"
-    On utilise les conditions ternaires pour déterminer l'affectation d'une valeur à une variable en fonction d'une condition définie. Les trois arguments d'un condition ternaire sont la condition à vérifier, la valeur si vraie, la valeur si fausse
- */
-let masseMoleculaire = 10;
-let existence = masseMoleculaire ? "existe" : "n'existe pas";
-
-console.log(existence);
-
-let user = 0;
-
-let peutRedigerUnPost = user ? "oui" : "non";
-
-console.log(peutRedigerUnPost);
-
-// Les conditions ternaires peuvent parfois se substituer avec des if.
-
-let age = 21;
-//let age = prompt("Quel age as tu ?")
-let promptMajeur = age >= 18 ? console.log("t'es majeur") : console.log("t'es mineur"); //L'opérateur ternaire ? permet de demander une condition située à sa gauche et d'exécuter du code à sa droite puis le ":" permet de spécifier le résultat dans e cas contraire, à la manière d'un  if-else en plus court.
-
-// OPERATEURS DE COMPARAISON
-console.log(x==y);//Vérifier une égalité simple, càd la valeur;
-
-console.log(x===y);//Vérifier une égalité stricte, autrement une identité, càd la valeur et le type;
-
-console.log(x>y);// Vérifie la supériorité ou l'infériorité en fonction du symbole utilisé. >,<,<=,>=
-
-console.log(x!=y)// Vérifie une inégalité simple, càd l'inégalité  des valeurs
-
-console.log(x!==y)// Vérifie l'inégalité stricte, càd l'inégalité des valeurs et des types
-
-// OPERATEURS LOGIQUES
-
-let heure = 15;
-let student = true;
-let dev = true;
-
-if (((heure > 8.5 && heure < 16.25) && student) || dev) {
-  /*
-    Avec l'opérateur ||, on demande d'exécuter l'instruction suivante
-    si au moins une des deux conditions est remplies 
-    mais pas nécessairement les 2.
-    L'opérateur && demande la véracité des deux conditions en même temps, sinon la condition ne s'exécute pas.
-    L'opérateur ! sert à inverser la condition. Donc dans le cas où il renvoie une valeur true, il renverra false et vice-versa
-  */
-    console.log("Au boulot !");
-}else{
-    console.log( "C'est pas l'heure des cours" );
+// FORME DECLARATIVE
+function addition(a,b){// déclaration avec le mot-clé function suivi de son nom et entre parenthèses son/ses arguments facultatifs. Ensuite vient le body de votre function qui va exécuter un ensemble d'instructions.
+    return a + b;
 }
 
-// Nullish Coalescing Operator, ou l'opérateur de coalescence;
-
-// Le NCO vérifie les valeurs et prends la première qui est définie, indépendamment de si elle est falsy ou non.
-let animal1;
-let animal2 = 0;
-let insecte = animal1 ?? animal2;
-
-console.log(insecte);
-
-//SWITCH CONDITIONS
-
-let arg = "2";
-switch (arg) {
-    case "night": //dans le cas où arg === 1
-        // modifie le css pour activer le thème night
-        console.log("c'est le cas n°1");
-        break;
-    case 2://dans le cas où arg === 2
-        console.log("c'est le cas n°2");
-        break;
-    case 3://dans le cas où arg === 3
-        console.log("c'est le cas n°3");
-        break;
-    default://dans les autres cas
-        console.log("c'est un cas par défaut");
+// FORME EXPRESSIVE
+const spelling = function(phrase="TALIS"){
+    return phrase.split("");
 };
+
+console.log(addition(1,2));
+console.log(addition(4,5));
+
+const prixDesCourses = addition(15,5);
+console.log(addition(2,5));
+console.log(spelling());
+
+console.log(prixDesCourses)
+
+let test = 3;
+
+// Les fonctions pures sont des fonctions qui ne reposent que sur leurs propres arguments et valeurs. Qui ne produit pas d'effets secondaires.
+
+// Scope d'une fonction
+
+let global = 5;
+
+function displayGlobal(){
+
+    return global;
+}
+function displayLocal(){
+    let local = "local";
+    return local;
+}
+
+console.log(global);//5
+console.log(displayGlobal());//5
+// console.log(local); // "local" si c'est une var, undefined autrement
+console.log(displayLocal()); // "local"
+
+// Les function recursives s'appellent elles-mêmes à l'intérieur d'elle-même
+function recursive(){
+    global++;
+    console.log(global);
+    if(global>5000){
+        return console.log("C'est fini");
+    }
+    return recursive();
+}
+
+// recursive();
