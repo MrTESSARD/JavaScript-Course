@@ -50,3 +50,16 @@ console.log(matrice[2]);
 console.log([0] == [0]);// On ne vérifie pas l'équivalence des arrays avec une comparaison numérique car il va comparer les propriétés en bits de l'array
 
 console.log(0==[]);//Va comparer la valeur mathématique de l'array et donc retourner 0
+
+const exo = "JavaScript, PHP, Python, Ruby, C++, Java, C, LUA, CSS, Objective C, HTML, GoLang, PASCAL";
+
+const langagesProgrammationArray = exo.split(", ");
+// Diviser une string en un nouvel array
+console.table(langagesProgrammationArray);
+
+const balisesHTML = ["div", "p", "section", "br", "hr", "h1", "style", "script", "meta", "body"];
+console.log(balisesHTML);
+
+let mesBalisesHTMLString = balisesHTML.join(', ');
+// Créer une string à partir d'un array
+console.log(mesBalisesHTMLString);
