@@ -84,3 +84,21 @@ let animal2 = 0;
 let insecte = animal1 ?? animal2;
 
 console.log(insecte);
+
+//SWITCH CONDITIONS
+
+let arg = "2";
+switch (arg) {
+    case "night": //dans le cas où arg === 1
+        // modifie le css pour activer le thème night
+        console.log("c'est le cas n°1");
+        break;
+    case 2://dans le cas où arg === 2
+        console.log("c'est le cas n°2");
+        break;
+    case 3://dans le cas où arg === 3
+        console.log("c'est le cas n°3");
+        break;
+    default://dans les autres cas
+        console.log("c'est un cas par défaut");
+};
