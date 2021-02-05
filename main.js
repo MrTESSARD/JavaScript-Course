@@ -1,71 +1,141 @@
-// EXERCICES SUR LES FUNCTIONS
+// OBJETS EN JS
+// Les objets en JS sont une collection de paires key-value. En JS TOUT ce qui n'est pas une primitive.
 
-function compteurVoyelles(string){
-    // Initialiser mon compteur
-    let compteur = 0;
-    // DECLARER LES VOYELLES
-    // let splitVoyelles = "aeiouy".split('');
-    const voyelles = ["a","e","i","o","u","y"];
-    // BOUCLE FOR POUR VERIFIER
-    lowerString = string.toLowerCase();
-    for (let carac of lowerString){
-        if(voyelles.includes(carac)){
-            //LA LETTRE EST UNE VOYELLE
-            compteur++;
-        }
-    }
-    return compteur;
+// Déclaration littérale
+const person = {
+    firstName:'John',
+    lastName:'Doe'
 };
 
-function pairImpair(a){
-    return !(a%2);
-}
+// Déclaration via constructor
+const chien = new Object();
 
-// ENONCE : A PARTIR DE L'ARRAY SUIVANT, FAIRE UNE FONCTION QUI CREE UNE SIMULATION DE COMBAT EN CHOISISSANT ALEATOIRE DEUX COMBATTANTS ET QUI RETOURNE UN PHRASE DU TYPE A vs B
+// Déclaration statique
+const chat = Object.create({});
 
-function vs(){
-    const fighter = ["Ryu", "Ken", "Chun-Li", "Goku", "Vegeta", "Beerus", "Heihachi","Jin","Connor McGregor", "Dhalsim", "Blanka", "Khabib", "John Cena", "The Rock"];
+// get = object.property;//Permet d'accéder à la valeur d'une propriété d'un object
+// object.property = set;//Permet de définir la valeur d'une propriété d'un objet
+
+// Méthodes pour afficher un objet
+console.log(person);
+console.log(person[0]);
+console.log(person.lastName);
+// On peut aussi utiliser la notation ["property"] pour y accéder mais ce n'est pas pratique
+console.log(person["firstName"]);
 
 
-    function randomFighter(){
-        return fighter[Math.floor(Math.random() * fighter.length)];
+let hello;
+let world;
+
+// Ancienne méthode d'initialisation d'objets
+const oldObj = {
+    hello:hello,
+    world:world,
+};
+
+
+// Nouvelle méthode d'initialisation d'objets
+const experience = "exp";
+
+const newObj = {
+    hello,
+    world,
+    [experience]:23,
+};
+
+console.log(newObj);
+//Supprimer une propriété d'un objet
+delete newObj.exp;
+
+console.log(newObj);
+
+// Comparaison, référence et identité d'un objet
+const origin = {
+    hello:'world',
+};
+
+// Des variables assignées à un objet sont des références à celui-ci
+const x = origin;
+const y = origin;
+
+// Par conséquent ils ne sont pas égaux à un nouvel objet mais plutôt au premier objet duquel ils font référence.
+console.log(x === y);
+console.log(x === origin);
+console.log(x === {hello: 'world'});
+
+
+// En modifiant la propriété d'un objet via une variable qui le référence, on modifie aussi cette valeur chez l'objet et les autres références.
+x.hello = 'hello';
+
+console.log(x);
+console.log(y);
+console.log(origin);
+
+const clone = Object.assign({},origin);
+
+console.log(clone === origin);
+
+clone.hello = "world";
+
+console.log(origin.hello);
+console.log(clone.hello);
+
+// Syntaxe ES6 avec le spread operator ou opérateur de décomposition
+const jumeau = {...origin,
+    bonjour: 'bonjour',
+    salut(){
+        console.log('Salut à toi jeune entrepreneur');
     }
+};
 
-    let fighter1 = randomFighter();
-    let fighter2 = randomFighter();
+console.log(jumeau);
 
-    //let fighter1 = fighter[Math.floor(Math.random() * fighter.length)];
-    //let fighter2 = fighter[Math.floor(Math.random() * fighter.length)];
-    /*
-    let fighter1 = fighter[random()];
-    let fighter2 = fighter[random()];
-    */
-    return `Get ready for the next battle ! ${fighter1} VS ${fighter2}`;
-}
+jumeau.salut();
 
-function SFxTekkenxDBZ(){
-    const sfPool = ["Ryu","Ken","Chun-li","Akuma","Gouken","Bison","Guile","Dhalsim","Seth","Vega","Balrog","Ibuki","Sagat","Cammy","Blanka","E.Honda","Karin","Sakura","Zangief","Rose"];
-    const dbfzPool =  ["SS Goku","SS Vegeta", "GT Goku", "C-21", "C-18", "C-17","C-16", "Super Baby 2", "Janemba", "SSGSS Gogeta", "SSGSS Goku", "Beerus", "Ginyu", "Cell", "Frieza", "Cooler", "A.Gohan", "T.Gohan", "Zamasu Fused", "Goku Black", "Jiren", "Hit", "Kid Buu", "Majin Buu", "Tien" , "Yamcha", "Nappa", "Trunks", "Bardock", "Broly", "Broly (DBS)","Videl", "Kefla", "UI Goku", "Piccolo", "SSGSS Vegito"];
-    const tekkenPool = ["Jin","Heihachi","Kazuya","Alisa","Leroy","Master Raven","Kuma","Panda","Akuma (Tekken)","Steve","Lee","Lei","Paul","Law","Nina","Yoshimitsu","Hwoarang","King","Armor King","Xiaoyu","Brian","Eddy","Anna","Asuka","Feng","Lili","Ganryu","Devil Jin","Bob","Leo","Miguel","Lars","Claudio","Katarina","Lucky Chloe","Shaheen","Josie","Gigas","Jack-7","Kazumi","Eliza","Marduk","Zafina","Kunimitsu","Negan (TWD)","Fahkumram","Geese","Noctis"];
-    const fullPool = [sfPool,dbfzPool,tekkenPool];
-    function randomTeam(){
-        const team = [];
-        for(let pool of fullPool){
-            let char = pool[Math.floor(Math.random() * pool.length)];
-            console.log(char);
-            team.push(char)
-        }
-        console.log(team);
-        return team.join("/");
+const dev = {
+    firstName:'Axel',
+    metier :'Développeur',
+    salut(){
+        console.log(`Salut à toi jeune ${this.metier}`);
     }
-    return `Time for the big showdown ! Team 1 : ${randomTeam()} VS Team 2 : ${randomTeam()}`
+}
+console.log(dev);
+dev.salut();
+
+const game = {
+    hp :100,
+    log(){
+        console.log(`💙${this.hp}`);
+    },
+    damage(){
+        this.hp-=10;
+        this.log();
+        return this;
+    },
+    heal(){
+        this.hp+=10;
+        this.log();
+        return this;
+    }
 }
 
-console.log(vs());
-console.log(SFxTekkenxDBZ());
+game.damage().damage().damage().heal();
 
 
-console.log(pairImpair(2))
+function Personnage(name){
+    this.name = name;
+    this.created = new Date();
+    this.birthday = function(){
+        console.log(this.created.toDateString());
+    };
 
-console.log(compteurVoyelles("pascal"));
-console.log(compteurVoyelles("carolane"));
+    this.sePresenter = function(){
+        console.log(this.name);
+    }
+}
+
+const mario = new Personnage("Mario");
+
+console.log(mario);
+mario.sePresenter();
+mario.birthday();
