@@ -1,141 +1,102 @@
-// OBJETS EN JS
-// Les objets en JS sont une collection de paires key-value. En JS TOUT ce qui n'est pas une primitive.
+// Syntaxe ES6 ou comment moderniser le JS.
 
-// Déclaration littérale
-const person = {
-    firstName:'John',
-    lastName:'Doe'
-};
+// Les arrow functions
 
-// Déclaration via constructor
-const chien = new Object();
-
-// Déclaration statique
-const chat = Object.create({});
-
-// get = object.property;//Permet d'accéder à la valeur d'une propriété d'un object
-// object.property = set;//Permet de définir la valeur d'une propriété d'un objet
-
-// Méthodes pour afficher un objet
-console.log(person);
-console.log(person[0]);
-console.log(person.lastName);
-// On peut aussi utiliser la notation ["property"] pour y accéder mais ce n'est pas pratique
-console.log(person["firstName"]);
-
-
-let hello;
-let world;
-
-// Ancienne méthode d'initialisation d'objets
-const oldObj = {
-    hello:hello,
-    world:world,
-};
-
-
-// Nouvelle méthode d'initialisation d'objets
-const experience = "exp";
-
-const newObj = {
-    hello,
-    world,
-    [experience]:23,
-};
-
-console.log(newObj);
-//Supprimer une propriété d'un objet
-delete newObj.exp;
-
-console.log(newObj);
-
-// Comparaison, référence et identité d'un objet
-const origin = {
-    hello:'world',
-};
-
-// Des variables assignées à un objet sont des références à celui-ci
-const x = origin;
-const y = origin;
-
-// Par conséquent ils ne sont pas égaux à un nouvel objet mais plutôt au premier objet duquel ils font référence.
-console.log(x === y);
-console.log(x === origin);
-console.log(x === {hello: 'world'});
-
-
-// En modifiant la propriété d'un objet via une variable qui le référence, on modifie aussi cette valeur chez l'objet et les autres références.
-x.hello = 'hello';
-
-console.log(x);
-console.log(y);
-console.log(origin);
-
-const clone = Object.assign({},origin);
-
-console.log(clone === origin);
-
-clone.hello = "world";
-
-console.log(origin.hello);
-console.log(clone.hello);
-
-// Syntaxe ES6 avec le spread operator ou opérateur de décomposition
-const jumeau = {...origin,
-    bonjour: 'bonjour',
-    salut(){
-        console.log('Salut à toi jeune entrepreneur');
-    }
-};
-
-console.log(jumeau);
-
-jumeau.salut();
-
-const dev = {
-    firstName:'Axel',
-    metier :'Développeur',
-    salut(){
-        console.log(`Salut à toi jeune ${this.metier}`);
-    }
+function altLog(){
+    return console.log('hello');
 }
-console.log(dev);
-dev.salut();
+const log = () => console.log('hello');
+// setTimeout(log,2000);
 
-const game = {
-    hp :100,
-    log(){
-        console.log(`💙${this.hp}`);
-    },
-    damage(){
-        this.hp-=10;
-        this.log();
-        return this;
-    },
-    heal(){
-        this.hp+=10;
-        this.log();
-        return this;
-    }
+
+
+
+// CONDITIONS RACCOURCIES
+
+let user = 1;
+
+// if(user){
+//     console.log("Inscrit !");
+// }
+
+// Permet de réaliser un if si celui-ci consiste en la validation d'une condition truthy/falsy
+user && console.log("Inscrit !");
+
+/*
+if(user.name){
+    console.log(user.name);
+}else{
+    console.log("Inconnu");
 }
+*/
 
-game.damage().damage().damage().heal();
+// Permet de renvoyer la première valeur truthy dans le cas d'une vérification de valeurs truthy/falsy
+console.log(user.name || "Inconnu");
+
+// MATH FLOOR - Retourner une valeur entière
+
+Math.floor(Math.random()*50);
+// Ces deux syntaxe renvoie un nombre entier entre 0 et 49
+~~(Math.random()*50);
+
+console.log(~~(Math.random()*50));// Combinaisons d'arrays
+let arr1 = [1,2,3,4,5];
+let arr2 = [6,7,8,9,10];
+
+console.log(arr1.concat(arr2));
+// Ces deux fonctions sont légérements distinctes en ce que la première crée un 3e array qui contiendra les 2, et la seconde ajoute le contenu de l'array 2 dans l'array 1;
+console.log(arr1.push.apply(arr1,arr2));
+console.log(arr1);
+
+// Higher order functions : Ces fonctions servent à réorganiser les arrays de façon à harmoniser les valeurs
+const consoles = [
+    { maker:'Sony', model:'PS4'},
+    { maker:'Sony', model:'PS5'},
+    { maker:'Microsoft', model:'Xbox One'},
+    { maker:'Microsoft', model:'Xbox Series X'},
+    { maker:'Nintendo', model:'Switch'},
+    { maker:'Nintendo', model:'Game Boy Advance'},
+    { maker:'Google', model:'Stadia'},
+    { maker:'SEGA', model:'Dreamcast'},
+    { maker:'ATARI', model:'Jaguar'},
+    null,
+    null,
+    undefined
+];
+
+// La fonction filter sert à filtrer (bah oui) les valeurs indésirés ou en fonction de ce que l'on souhaite. Ici filter(Boolean) va supprimer les valeurs undefined et null de notre array retourné
+const sony = consoles.filter(Boolean).filter(console=>console.maker === 'Sony');
+// Et le second fiter() va permettre de filtrer les consoles pour n'afficher que celles produites par Sony
+console.table(sony);
+
+// La fonction Set permet de retourner un array ne comportant pas de doublons.
+const constructeur = ['Peugeot','Citroen','Lamborghini','Peugeot','Peugeot','Peugeot','Citroen'];
+
+const cleanConstructeur = [...new Set(constructeur)]
+console.table(cleanConstructeur);
 
 
-function Personnage(name){
-    this.name = name;
-    this.created = new Date();
-    this.birthday = function(){
-        console.log(this.created.toDateString());
-    };
+const me = {
+    name:"Axel",
+    age:26,
+    estDev:true
+};
+const talis = {
+    type:"school",
+    city:"bordeaux",
+};
 
-    this.sePresenter = function(){
-        console.log(this.name);
-    }
-}
+// L'opérateur de décomposition "..." permet de décomposer des propriétés d'un objet. On peut aussi l'utiliser pour créer des variables qui porteront le nom des propriétés.
+const secondUser = {...me};
 
-const mario = new Personnage("Mario");
+const {name,age,estDev} = me;
 
-console.log(mario);
-mario.sePresenter();
-mario.birthday();
+console.log(name,age,estDev);
+
+// Des objets peuvent être combinés en utilisant une déclaration qui utilise l'opérateur de décomposition "..." pour les combiner.
+// On se retrouve avec un objet comportant les deux objets initiaux.
+const meAtTalis = {...me,...talis};
+
+console.log(meAtTalis)
+
+
