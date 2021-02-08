@@ -3,9 +3,6 @@ const addButton = document.querySelector('.btn-add');
 const userList = document.querySelector('#userlist');
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
-const li = document.createElement('li');
-li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
-
 //! Evenements JS pour ajouter des éléments.
 //? addEventListener permet d'initialiser un gestionnaire d'évènements. L'évènement est le premier argument de la méthode et le second argument est le callback
 addButton.addEventListener('click',(e) =>{
