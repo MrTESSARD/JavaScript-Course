@@ -1,16 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="css/style.css">
-    <title>JavaScript Functions</title>
-</head>
-<body>
-    <h1>Les objets</h1>
-    <p>Les objets en JavaScript sont la clé de voûte du langage, malgré celui-ci n'est pas un langage orienté objet spécifiquement.</p>
-    <p>Toutefois à cause de sa nature dynamique, il permet beaucoup de paradigmes de développement allant de la POO (programmation orienté objet) au fonctionnel.</p>
-    <script src="main.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>JavaScript & Manipulation du DOM</title>
+  </head>
+
+  <body>
+    <main>
+        <section class="glass">
+                <div class="dashboard">
+                    <div class="title">
+                        <h1>Manipulation du DOM</h1>
+                    </div>
+                    <div class="links">
+                        <div class="link">
+                            <img src="./images/javascript.png" alt="Javascript" srcset="">
+                            <h2>Techno</h2>
+                        </div>
+                        <div class="link">
+                            <img src="./images/github.png" alt="GitHub" srcset="">
+                            <h2><a href="https://github.com/NegiAlba/JavaScript-Course">Repository</a></h2>
+                        </div>
+                        <div class="link">
+                            <img src="./images/talis.png" alt="Talis" srcset="">
+                            <h2>Formation</h2>
+                        </div>
+                    </div>
+                </div>
+            <div class="container">
+                <h2> Créer un utilisateur</h2>
+                <form action="" id="my-form" class="user-form">
+                  <div class="msg"></div>
+                  <div>
+                    <label for="name">Nom d'utilisateur :</label>
+                    <input type="text" id="name" />
+                  </div>
+                  <div>
+                      <label for="email">Email Utilisateur :</label>
+                      <input type="email" id="email" />
+                  </div>
+                  <button type="submit" class="btn-add"><i class="fas fa-plus"></i></button>
+                </form>
+                <ul id="userlist"></ul>
+              </div>
+            </div>
+        </section>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+    </main>
+    
+
+
+    <script src="./main.js" defer></script>
+  </body>
 </html>
