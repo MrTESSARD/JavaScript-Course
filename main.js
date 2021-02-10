@@ -8,17 +8,19 @@ class User {
         this.name = name;
         this.surname = surname;
     }
+
+    get name () { return this._name; }
+
+    set name (value) {
+        if(value.length < 3){
+            console.log(`Name : ${value} is too short`);
+            return;
+        }
+        this._name = value;
+    }
+
+    salut() {
+        console.log(`Salut ! Je suis ${this.name}`);
+    }
 }
-console.log(typeof User);
-console.log(User);
-
-let vide = new User();
-let john = new User("John","Doe");
-let cena = new User("John","Cena");
-let jane = new User("Jane","Doe");
-
-console.log(vide);
-console.log(john);
-console.log(cena);
-console.log(jane);
 
